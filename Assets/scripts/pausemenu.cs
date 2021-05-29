@@ -7,6 +7,7 @@ public class pausemenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuState;
+    public static bool Gameoverstate = false;
 
 
     // update to refere to functions
@@ -14,7 +15,7 @@ public class pausemenu : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && Gameoverstate != true) 
         {
             if (GameIsPaused)
             {
@@ -29,9 +30,12 @@ public class pausemenu : MonoBehaviour
     // resume and pause function
     public void Resume()
     {
-        pauseMenuState.SetActive(false);
-        Time.timeScale = 1f;
-        GameIsPaused = false;
+        
+        
+            pauseMenuState.SetActive(false);
+            Time.timeScale = 1f;
+            GameIsPaused = false;
+        
     }
     public void Pause()
     {

@@ -8,11 +8,13 @@ public class GameManger : MonoBehaviour
     public GameObject gameOverCanvas;
     private void Start()
     {
+        Screen.SetResolution(412, 732, Screen.fullScreen);
         Time.timeScale = 1;
     }
 
     public void GameOver()
     {
+        pausemenu.Gameoverstate = true;
         gameOverCanvas.SetActive(true);
         Time.timeScale = 0;
 
@@ -20,7 +22,9 @@ public class GameManger : MonoBehaviour
   
         public void Restart()
     {
-        SceneManager.LoadScene(0);
+        pausemenu.Gameoverstate = false;
+        SceneManager.LoadScene(1);
+        
     }
     
 }
