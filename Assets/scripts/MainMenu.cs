@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     private void Start()
     {
+        // set resolution on start phone screen shape
         Screen.SetResolution(412, 732, Screen.fullScreen);
     }
 

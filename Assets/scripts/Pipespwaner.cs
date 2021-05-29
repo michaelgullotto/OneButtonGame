@@ -9,13 +9,14 @@ public class Pipespwaner : MonoBehaviour
     public GameObject pipe;
     public float height;
 
+    // Spawns intial pipe 
     void Start()
     {
         GameObject newpipe = Instantiate(pipe);
         newpipe.transform.position = transform.position + new Vector3(0, Random.Range(-height, height), 0);
     }
 
-    // Update is called once per frame
+    // spawns following pipes on timer && destroys them after awhile when they arent needed anymore(Offscreen) 
     void Update()
     {
         if (timer > maxTime)
@@ -27,62 +28,5 @@ public class Pipespwaner : MonoBehaviour
         }
 
         timer += Time.deltaTime;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

@@ -10,10 +10,10 @@ public class pausemenu : MonoBehaviour
     public static bool Gameoverstate = false;
 
 
-    // update to refere to functions
+   
     void Update()
     {
-
+        // setup to pause and resume game on esc press but disabled while player is dead
 
         if (Input.GetKeyDown(KeyCode.Escape) && Gameoverstate != true) 
         {
@@ -27,11 +27,9 @@ public class pausemenu : MonoBehaviour
             }
         }
     }
-    // resume and pause function
+    // resume and pause function pauses and resumes time when paused and unpaused
     public void Resume()
     {
-        
-        
             pauseMenuState.SetActive(false);
             Time.timeScale = 1f;
             GameIsPaused = false;
@@ -43,15 +41,14 @@ public class pausemenu : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
-    // menu and quit button functionality
+    // Loads mainmenu linked to button
     public void LoadMenu()
-    {
-
+    { 
         Time.timeScale = 1f;
         SceneManager.LoadScene("mainmenu");
         GameIsPaused = (false);
     }
-
+    // Quits game linked to button
     public void QuitGame()
     {
         Application.Quit();
